@@ -8,20 +8,18 @@ import axios from 'axios'
 
 class Covid19 extends Component {
   state={
-    text:null,time:new Date(),data:null,country:null
+    text:"",time:new Date(),data:null,country:null
   }
     changehandel(event){
       const name=event.target.value
       this.setState({...this.state.Age,text:name})
     }
-  increament=()=>{ this.setState({Age:this.state.Age+1})}
-  decrement=()=>{this.setState({Age:this.state.Age-1})}
   sumbit=()=>{this.setState({...this.state,country:this.state.text.toLowerCase()})}
   _handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       this.sumbit()
     }}
-
+    selecthandel=(e)=>{this.setState({...this.state, text:e.target.value})}
   componentDidMount(){
   axios.get('https://api.covid19api.com/summary').then(result=>{
     console.log(result.data)
@@ -57,9 +55,9 @@ this.setState({data:result.data})
     return (
       <div className="Covid19">
       <h1>Search for the country</h1>
-      <Selection/>
+      <Selection onChange={this.selecthandel}/>
       <div className="searchcontainer">
-        <input type="text" onChange={this.changehandel.bind(this)} className="input" onKeyDown={this._handleKeyDown}/>
+        <input type="text" onChange={this.changehandel.bind(this)} className="input" onKeyDown={this._handleKeyDown} value={this.state.text}/>
         {this.state.text? <BsSearch className="search"  onClick={ this.sumbit} />: <BsSearch className="search searchnone"  />}
         </div>
         {data[0]?displaydata(data):this.state.country?<div className="Error">Please Enter a valid Country</div>:null}

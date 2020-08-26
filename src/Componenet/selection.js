@@ -2,7 +2,9 @@ import React,{Component} from 'react';
 
 class Selection extends Component {
     render(){
-        return(<div><select name="countries" id="countries" >
+        return(<div>
+        <select name="countries" id="countries" onChange={this.props.onChange}>
+        <option value="" >Select</option>
         <option value="Afghanistan" >Afghanistan</option>
         <option value="Albania">Albania</option>
         <option value="Algeria">Algeria</option>
@@ -13,7 +15,7 @@ class Selection extends Component {
         <option value="Armenia">Armenia</option>
         <option value="Australia">Australia</option>
         <option value="Austria">Austria</option>
-        <option value="azerbaijan">azerbaijan</option>
+        <option value="Azerbaijan">Azerbaijan</option>
         <option value="Bahamas">Bahamas</option>
         <option value="Bahrain">Bahrain</option>
         <option value="Bangladesh">Bangladesh</option>
