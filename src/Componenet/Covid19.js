@@ -19,7 +19,9 @@ class Covid19 extends Component {
     if (e.key === 'Enter') {
       this.sumbit()
     }}
-    selecthandel=(e)=>{this.setState({...this.state, text:e.target.value})}
+    selecthandel=(e)=>{this.setState({...this.state, text:e.target.value}) 
+    
+  }
   componentDidMount(){
   axios.get('https://api.covid19api.com/summary').then(result=>{
     console.log(result.data)
