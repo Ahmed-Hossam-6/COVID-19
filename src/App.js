@@ -29,8 +29,8 @@ class App extends Component {
               </Switch>
         </div>
         <div className="navbar">
-  <a href="https://www.facebook.com/profile.php?id=100014654559811"  target="_blank"><FaFacebook/></a>
-  <a href="https://www.linkedin.com/in/ahmed-hossam-015bb114b/" target="_blank" className="link"><AiFillLinkedin/></a>
+  <a href="https://www.facebook.com/profile.php?id=100014654559811"  target="_blank" rel="noopener noreferrer"><FaFacebook/></a>
+  <a href="https://www.linkedin.com/in/ahmed-hossam-015bb114b/" target="_blank" className="link" rel="noopener noreferrer"><AiFillLinkedin/></a>
   <div className="contact" >Contact: 01114349352</div>
 </div>
       </Router>
